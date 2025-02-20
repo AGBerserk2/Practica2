@@ -1,31 +1,25 @@
-import java.util.Scanner;
-
-class Main {
+public class Main {
     public static void main(String[] args) {
-        Coche coche = new Coche();
-        int velocidad;
-        Scanner scan = new Scanner(System.in);
-
-        coche.setMarca("TOYOTA");
-        coche.setAño(2010);
-        coche.setModelo("CAMRY");
-        System.out.println("Marca: " + coche.getMarca());
-        System.out.println("Modelo: " + coche.getModelo());
-        System.out.println("Año: " + coche.getAño());
-        System.out.println("Velocidad: " + coche.getVelocidad());
-
-        coche.acelerar();
-        System.out.println("Velocidad: " + coche.getVelocidad());
+        Coche coche1 = new Coche();
         
-        System.out.println("Ingrese la Velocidad que desea aumentar");
-        velocidad = scan.nextInt();
-        coche.acelerar(velocidad);
+        coche1.setAño(2012);
+        coche1.setMarca("HONDA");
+        coche1.setModelo("ACCORD");
+        coche1.acelerar();
+        coche1.mostrarDatos();
+        coche1.frenar();
+        coche1.mostrarDatos();
+        Coche coche2 = new Coche("TOYOTA", "HIGHLANDER");
         
-        System.out.println("Velocidad: " + coche.getVelocidad());
-        coche.frenar();
+        coche2.setAño(2020);
+        coche2.acelerar(35);
+        coche2.mostrarDatos();
+        coche2.frenar();
+        coche2.mostrarDatos();
         
-        System.out.println("Velocidad: " + coche.getVelocidad());
-
-        scan.close();
+        Coche coche3 = new Coche("CHEVROLET", "CAMARO", 2010, 75);
+        coche3.mostrarDatos();
+        coche3.frenar();
+        coche3.mostrarDatos();
     }
 }
